@@ -8,7 +8,7 @@ export interface CreateUserInput {
 }
 
 export interface CreateUserResponse {
-  id: id;
+  userId: id;
   name: string;
 }
 export interface SuccessResponse<T> {
