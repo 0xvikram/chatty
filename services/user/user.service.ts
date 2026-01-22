@@ -1,6 +1,10 @@
 import { CreateUserInput, CreateUserResponse } from "@/types/api";
 import { generateId } from "@/lib/id-generator";
-import { findUserById, saveUser } from "@/repositories/user.repositoriy";
+import {
+  findUserById,
+  saveUser,
+  getAllUsers as getAllUsersFromRepo,
+} from "@/repositories/user.repositoriy";
 import { User } from "@/types/user";
 import { id } from "@/types/common";
 
@@ -17,4 +21,8 @@ export function createUser(input: CreateUserInput): CreateUserResponse {
 
 export function getUserById(userId: id): User | undefined {
   return findUserById(userId);
+}
+
+export function getAllUsers(): User[] {
+  return getAllUsersFromRepo();
 }
